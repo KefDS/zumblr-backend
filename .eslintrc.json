@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "recommended/esnext",
+    "recommended/esnext/style-guide",
+    "recommended/node",
+    "recommended/node/style-guide"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "import/no-commonjs": "off"
+  }
+}
