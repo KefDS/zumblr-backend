@@ -1,3 +1,3 @@
-# zumblr-backend
+# Zumblr Backend
 
-a [Sails](http://sailsjs.org) application
+Tumblr Clone - Backend.
