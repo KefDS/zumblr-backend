@@ -1,8 +1,15 @@
 /**
  * Post.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @description :: Post. It can be photo, video, etc.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-module.exports = { attributes: { description: { type: 'String' } } }
+module.exports = {
+  attributes: {
+    description: { type: 'String' },
+
+    // Associations
+    author: { model: 'user' },
+  },
+};

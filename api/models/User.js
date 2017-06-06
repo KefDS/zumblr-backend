@@ -1,7 +1,7 @@
 /**
  * User.js
  *
- * @description :: Represent a zumblr User
+ * @description :: Represent a User and its default Blog
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
@@ -21,6 +21,18 @@ module.exports = {
       unique: true,
     },
     encryptedPassword: { type: 'String' },
+
+    // Blog
+    blogName: {
+      type: 'string',
+      defaultTo: 'untitled',
+    },
+
+    // Associations
+    posts: {
+      collection: 'post',
+      via: 'author',
+    },
   },
 
   // Json response comes without the password
