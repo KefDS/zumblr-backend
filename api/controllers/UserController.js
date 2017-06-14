@@ -18,7 +18,7 @@ module.exports = {
         error
           ? response.json(error.status, { error })
           : response.json(HttpStatus.CREATED, {
-            user,
+            user: user.toJSON(),
             token: jsonWebToken.generateToken({ id: user.id }),
           })
     );

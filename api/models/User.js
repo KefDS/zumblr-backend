@@ -9,17 +9,21 @@
 const bcrypt = require('bcrypt');
 
 module.exports = {
+  schema: true,
+
   attributes: {
     email: {
       type: 'email',
       required: true,
       unique: true,
     },
+
     username: {
       type: 'String',
       required: true,
       unique: true,
     },
+
     encryptedPassword: { type: 'String' },
 
     // Blog
@@ -33,13 +37,24 @@ module.exports = {
       collection: 'post',
       via: 'author',
     },
-  },
 
-  // Json response comes without the password
-  toJson () {
-    const objModelRepresentation = this.toObject();
-    delete objModelRepresentation.encryptedPassword;
-    return objModelRepresentation;
+    follower: {
+      collection: 'user',
+      via: 'following',
+      dominant: true,
+    },
+
+    following: {
+      collection: 'user',
+      via: 'follower',
+    },
+
+    // Json response comes without the password
+    toJSON () {
+      const objModelRepresentation = this.toObject();
+      delete objModelRepresentation.encryptedPassword;
+      return objModelRepresentation;
+    },
   },
 
   // Encrypt plain password before save record
