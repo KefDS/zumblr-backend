@@ -27,7 +27,7 @@ module.exports = {
         return valid
           ? response.json({
             user: user.toJSON(),
-            token: user.id,
+            token: jsonWebToken.generateToken(user.id),
           })
           : response.json(HttpStatus.UNAUTHORIZED, emailOrPasswordIncorrect);
       });
