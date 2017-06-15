@@ -24,7 +24,10 @@ module.exports = {
       unique: true,
     },
 
-    encryptedPassword: { type: 'String' },
+    encryptedPassword: {
+      type: 'String',
+      require: true,
+    },
 
     // Blog
     blogName: {
@@ -38,16 +41,31 @@ module.exports = {
       via: 'author',
     },
 
-    follower: {
-      collection: 'user',
-      via: 'following',
-      dominant: true,
+    multimedia: {
+      collection: 'multimedia',
+      via: 'owner',
     },
 
-    following: {
-      collection: 'user',
-      via: 'follower',
-    },
+    // comments: {
+    //   collection: 'comment',
+    //   via: 'author',
+    // },
+
+    // follower: {
+    //   collection: 'user',
+    //   via: 'following',
+    //   dominant: true,
+    // },
+
+    // following: {
+    //   collection: 'user',
+    //   via: 'follower',
+    // },
+
+    // likes: {
+    //   collection: 'post',
+    //   via: 'likedBy',
+    // },
 
     // Json response comes without the password
     toJSON () {

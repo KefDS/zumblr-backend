@@ -1551,10 +1551,6 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-0.4.0.tgz#f6fb351363c2d92207245c737802c9ab5ae1495a"
-
 dotenv@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
@@ -4773,12 +4769,6 @@ sails-hook-babel@^6.0.3:
     babel-register "^6.18.0"
     source-map-support "^0.4.6"
 
-sails-hook-dotenv@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/sails-hook-dotenv/-/sails-hook-dotenv-0.1.1.tgz#30b38a836f08a609b8e350fbb64ba5af4a978b42"
-  dependencies:
-    dotenv "^0.4.0"
-
 sails-hook-orm@~1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/sails-hook-orm/-/sails-hook-orm-1.0.9.tgz#461698a0cb154275343913f5e6242fe2762dbec8"
@@ -5644,6 +5634,10 @@ utile@0.2.x:
 utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
+
+uuid4@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/uuid4/-/uuid4-1.0.0.tgz#813aaeaf11ea2f68909c5ad57d894f83202d6720"
 
 uuid@3.0.1, uuid@^3.0.0, uuid@~3.0.1:
   version "3.0.1"
