@@ -3,18 +3,28 @@
   "version": "0.0.0",
   "description": "Tumblr clone - Backend",
   "keywords": [],
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "dotenv": "^4.0.0",
+    "http-status-codes": "^1.1.6",
     "include-all": "^1.0.0",
+    "jsonwebtoken": "^7.4.1",
     "npm": "^5.0.2",
     "rc": "1.0.1",
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "sails-hook-babel": "^6.0.3",
-    "sails-mongo": "^0.12.2"
+    "sails-mongo": "^0.12.2",
+    "uuid4": "^1.0.0"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "prod": "node app.js"
   },
   "main": "app.js",
   "repository": "git://github.com/kevin/zumblr-backend.git",

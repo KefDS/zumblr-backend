@@ -1,8 +1,45 @@
 /**
  * Post.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @description :: Post. It can be photo, video, etc.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-module.exports = { attributes: { description: { type: 'String' } } }
+module.exports = {
+  attributes: {
+
+    // In tumblr exists several types of post
+    postType: {
+      type: 'string',
+      enum: [ 'text', 'photo', 'quote', 'link', 'chat', 'audio', 'video' ],
+      required: true,
+    },
+
+    text: { type: 'text' },
+
+    hashtags: { type: 'array' },
+
+    // Associations
+    author: {
+      model: 'user',
+      required: true,
+    },
+
+    multimedia: {
+      model: 'multimedia',
+      via: 'post',
+    },
+
+    // likedBy: {
+    //   collection: 'user',
+    //   via: 'likes',
+    //   dominant: true,
+    // },
+
+    // comments: {
+    //   collection: 'comment',
+    //   via: 'post',
+    //   required: false,
+    // },
+  },
+};
