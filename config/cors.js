@@ -28,7 +28,7 @@
 
 module.exports.cors = {
 
-  /***************************************************************************
+  /** *************************************************************************
   *                                                                          *
   * Allow CORS on all routes by default? If not, you must enable CORS on a   *
   * per-route basis by either adding a "cors" configuration object to the    *
@@ -37,9 +37,9 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // allRoutes: false,
+  allRoutes: true,
 
-  /***************************************************************************
+  /** *************************************************************************
   *                                                                          *
   * Which domains which are allowed CORS access? This can be a               *
   * comma-delimited list of hosts (beginning with http:// or https://) or    *
@@ -47,17 +47,17 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // origin: '*',
+  origin: '*',
 
-  /***************************************************************************
+  /** *************************************************************************
   *                                                                          *
   * Allow cookies to be shared for CORS requests?                            *
   *                                                                          *
   ***************************************************************************/
 
-  // credentials: true,
+  credentials: false,
 
-  /***************************************************************************
+  /** *************************************************************************
   *                                                                          *
   * Which methods should be allowed for CORS requests? This is only used in  *
   * response to preflight requests (see article linked above for more info)  *
@@ -66,13 +66,13 @@ module.exports.cors = {
 
   // methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
 
-  /***************************************************************************
+  /** *************************************************************************
   *                                                                          *
   * Which headers should be allowed for CORS requests? This is only used in  *
   * response to preflight requests.                                          *
   *                                                                          *
   ***************************************************************************/
 
-  // headers: 'content-type'
+  headers: [ 'content-type', 'Authorization' ],
 
 };

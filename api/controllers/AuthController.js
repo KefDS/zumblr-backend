@@ -7,7 +7,7 @@
 const HttpStatus = require('http-status-codes');
 
 module.exports = {
-  index (request, response) {
+  index(request, response) {
     const emailOrPasswordIncorrect = { error: 'email and password required' };
 
     const email = request.param('email');

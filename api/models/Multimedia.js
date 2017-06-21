@@ -6,10 +6,10 @@
  */
 
 module.exports = {
-  // TODO: Type of the multimedia
   attributes: {
-    url: {
-      type: 'String',
+    multiType: {
+      type: 'string',
+      enum: [ 'photo', 'video' ],
       required: true,
     },
 
@@ -24,7 +24,7 @@ module.exports = {
       required: true,
     },
 
-    // It should links with post when the post is created
+    // It should links with a post when the post is created
     post: {
       model: 'post',
       required: false,

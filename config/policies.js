@@ -26,6 +26,7 @@ module.exports.policies = {
   '*': [ 'isAuthorized' ], // Everything restricted here
   AuthController: { '*': true },
   UserController: { create: true },
+  Multimedia: { findOne: true },
 
   /** *************************************************************************
   *                                                                          *

@@ -4,7 +4,6 @@
  * @description :: Server-side logic for managing multimedia
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-const uuid = require('uuid4');
 const HttpStatus = require('http-status-codes');
 
 module.exports = {
@@ -15,15 +14,28 @@ module.exports = {
       if (uploadedFile.length === 0)
         return response.badRequest('No file was uploaded');
 
-      const assetUrl = require('util').format('%s/assets/%s', sails.config.appUrl, uuid());
-
       Multimedia.create({
+        multiType: request.param('multiType'),
         owner: request.token.id,
-        url: assetUrl,
         path: uploadedFile[0].fd,
       })
-      .then(multimedia => response.json(HttpStatus.CREATED, multimedia.id))
-      .catch(error => response.negotiate(error));
+        .then(multimedia => response.json(HttpStatus.CREATED, multimedia.id))
+        .catch(error => response.negotiate(error));
     });
+  },
+
+  findOne (request, response) {
+    const Path = require('path');
+    const fs = require('fs');
+
+    Multimedia.findOne({ id: request.param('id') })
+      .then(value => {
+        // If a relative path was provided, resolve it relative
+        // to the cwd (which is the top-level path of this sails app)
+        fs.createReadStream(Path.resolve(value.path))
+          .on('error', err => response.serverError(err))
+          .pipe(response);
+      })
+      .catch(error => response.json(HttpStatus.INTERNAL_SERVER_ERROR));
   },
 };

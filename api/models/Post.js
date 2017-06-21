@@ -15,6 +15,10 @@ module.exports = {
       required: true,
     },
 
+    text: { type: 'text' },
+
+    hashtags: { type: 'array' },
+
     // Associations
     author: {
       model: 'user',
