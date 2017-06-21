@@ -62,6 +62,15 @@ module.exports.connections = {
     database: 'zumblr-dev', // optional
   },
 
+  prodMongodb: {
+    adapter: 'sails-mongo',
+    host: 'ds143340.mlab.com',
+    port: 43340,
+    user: 'heroku',
+    password: 'herokusecret',
+    database: 'zumblr',
+  },
+
   /** *************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

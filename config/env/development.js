@@ -18,5 +18,5 @@ module.exports = {
 
   models: { connection: 'devMongodb' },
 
-  appUrl: 'localhost:1337',
+  // appUrl: 'localhost:1337',
 };
