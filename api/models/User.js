@@ -6,7 +6,7 @@
  */
 
 // Encrypt mode
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
   schema: true,
@@ -68,7 +68,7 @@ module.exports = {
     // },
 
     // Json response comes without the password
-    toJSON () {
+    toJSON() {
       const objModelRepresentation = this.toObject();
       delete objModelRepresentation.encryptedPassword;
       return objModelRepresentation;
@@ -76,7 +76,7 @@ module.exports = {
   },
 
   // Encrypt plain password before save record
-  beforeCreate (values, next) {
+  beforeCreate(values, next) {
     bcrypt.genSalt(10, (error, salt) => {
       if (error) return next(error);
 
@@ -88,7 +88,7 @@ module.exports = {
     });
   },
 
-  isPasswordValid (password, user, callback) {
+  isPasswordValid(password, user, callback) {
     bcrypt.compare(password, user.encryptedPassword, (error, match) => {
       if (error || !match) callback(error);
       else callback(null, true);
