@@ -15,6 +15,8 @@ module.exports = {
       required: true,
     },
 
+    title: { type: 'String' },
+
     text: { type: 'text' },
 
     hashtags: { type: 'array' },

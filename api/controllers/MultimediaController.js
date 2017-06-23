@@ -16,7 +16,7 @@ module.exports = {
 
       Multimedia.create({
         multiType: request.param('multiType'),
-        owner: request.token.id,
+        owner: request.param('author'),
         path: uploadedFile[0].fd,
       })
         .then(multimedia => response.json(HttpStatus.CREATED, multimedia.id))
